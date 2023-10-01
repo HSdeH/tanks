@@ -128,6 +128,7 @@ void Game::update(float deltaTime)
 {
     //Calculate the route to the destination for each tank using BFS
     //Initializing routes here so it gets counted for performance..
+    //TODO vind een betere pathfinder (A* of Dijkstra)
     if (frame_count == 0)
     {
         for (Tank& t : tanks)
@@ -137,6 +138,7 @@ void Game::update(float deltaTime)
     }
 
     //Check tank collision and nudge tanks away from each other
+    //TODO nu kwadratisch, zou tenminste niet dubbel gecheckt moeten worden, ongeveer 250ms
     for (Tank& tank : tanks)
     {
         if (tank.active)
@@ -160,6 +162,7 @@ void Game::update(float deltaTime)
     }
 
     //Update tanks
+    //deze lijkt wel snel te gaan, één loop
     for (Tank& tank : tanks)
     {
         if (tank.active)
@@ -243,6 +246,7 @@ void Game::update(float deltaTime)
     }
 
     //Update rockets
+    //TODO analyseer deze, ongeveer 100ms
     for (Rocket& rocket : rockets)
     {
         rocket.tick();
