@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.4)
-project ("Tmpl8_2018-01")
+project ("Optimalisatie")
 
 # FindFreeImage.cmake and FindSDL2.cmake are not part of cmake by default, use modified third-party scripts:
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
@@ -9,6 +9,9 @@ find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(SDL2 REQUIRED)
 find_package(FreeImage REQUIRED)
+
+# niet perse nodig
+# file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
 
 # Compile all "*.cpp" files in the root directory:
 file(GLOB SOURCES "*.cpp")
